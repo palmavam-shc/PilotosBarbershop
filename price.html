@@ -22,6 +22,7 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/booking.css" rel="stylesheet">
     </head>
 
     <body>
@@ -99,138 +100,68 @@
 
 
         <!-- Pricing Start -->
-        <div class="price">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Pilotos Pricing</p>
-                    <h2>We Provide The Best Price that fits your money's worth</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-1.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Hair Cut</h2>
-                                <h3>₱250</h3>
+            <div class="price">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <p>Our Best Pricing</p>
+                        <h2>Select Services & Calculate Your Bill</h2>
+                    </div>
+                    <div class="row">
+                        <!-- Left Column: Barbershop Services -->
+                        <div class="col-lg-7 mb-4">
+                            <div class="booking-card">
+                                <h3 class="booking-card-title">Barbershop Services</h3>
+                                <p class="text-muted small mb-3">Get an automatic <strong>10% VIP Package Discount</strong> on total services worth ₱500 and above!</p>
+                                <div id="serviceMenu"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-2.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Hair Wash</h2>
-                                <h3>₱500</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-3.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Hair Color</h2>
-                                <h3>₱750</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-4.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Hair Shave</h2>
-                                <h3>₱700</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-5.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Hair Straight</h2>
-                                <h3>₱900</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-6.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Facial</h2>
-                                <h3>₱900</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-7.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Shampoo</h2>
-                                <h3>₱1,000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-8.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Beard Trim</h2>
-                                <h3>₱300</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-9.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Beard Shave</h2>
-                                <h3>₱200</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-10.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Wedding Cut</h2>
-                                <h3>₱2,000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-12.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Massage</h2>
-                                <h3>₱1,200</h3>
+
+                        <!-- Right Column: Selected Services Cart & Checkout -->
+                        <div class="col-lg-5">
+                            <div class="booking-card sticky-cart">
+                                <h3 class="booking-card-title">Your Service Summary</h3>
+                                <div id="serviceCart"></div>
+
+                                <div class="summary-box">
+                                    <div class="summary-line" id="subtotal">Subtotal: ₱0.00</div>
+                                    <div class="summary-line" id="discountLine">VIP Discount (10%): -₱0.00</div>
+                                    <div class="summary-line" id="total">Total: ₱0.00</div>
+                                </div>
+
+                                <div class="checkout-form mt-3">
+                                    <div class="form-group">
+                                        <label for="customerName" class="font-weight-bold">Client Name</label>
+                                        <input id="customerName" type="text" class="form-control" placeholder="Enter your full name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="barberSelect" class="font-weight-bold">Preferred Barber</label>
+                                        <select id="barberSelect" class="form-control">
+                                            <option value="Any Available Barber">Any Available Barber</option>
+                                            <option value="Sir Deejay">Sir Deejay</option>
+                                            <option value="Sir Marko">Sir Marko</option>
+                                            <option value="Sir Kim">Sir Kim</option>
+                                            <option value="Sir Michael">Sir Michael</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="paymentAmount" class="font-weight-bold">Payment Amount (₱)</label>
+                                        <input id="paymentAmount" type="number" class="form-control" placeholder="Enter cash payment in ₱">
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mt-3">
+                                        <button id="clearOrder" type="button" class="btn btn-clear">Clear Selection</button>
+                                        <button id="placeOrder" type="button" class="btn btn-order">Confirm & Pay</button>
+                                    </div>
+                                </div>
+
+                                <div id="message" class="order-message mt-3" role="alert"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         <!-- Pricing End -->
+
 
 
         <!-- Footer Start -->
@@ -294,5 +225,7 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/booking.js"></script>
+
     </body>
 </html>
